@@ -1,25 +1,34 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const UsingDSG = () => (
-  <Layout>
-    <Seo title="Using DSG" />
-    <h1>
-      Hello from a <b>DSG Page</b>
-    </h1>
-    <p>This page is not created until requested by a user.</p>
-    <p>
-      To learn more, head over to our{" "}
-      <a href="https://www.gatsbyjs.com/docs/reference/rendering-options/deferred-static-generation/">
-        documentation about Deferred Static Generation
-      </a>
-      .
-    </p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+export default function Post({ data }) {
+  const { markdownRemark } = data
+  const { html, fields } = markdownRemark
+  const { slug } = fields
+  const title = slug.slice(1)
 
-export default UsingDSG
+  return (
+    <Layout>
+      <Seo title={title} />
+
+      <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </Layout>
+  )
+}
+export const query = graphql`
+  query ($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      fields {
+        slug
+      }
+      # frontmatter {
+      #   title
+      # }
+    }
+  }
+`
