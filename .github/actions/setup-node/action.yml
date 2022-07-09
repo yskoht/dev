@@ -1,0 +1,23 @@
+name: 'Setup node'
+
+description: 'Setup node and cache ~/.npm'
+
+runs:
+  using: 'composite'
+  steps:
+    # https://github.com/nodenv/actions-node-version
+    - id: nodenv
+      uses: nodenv/actions-node-version@0ee64062e52f3ddf3d4c48b6e91b1ffd90bdbd83
+
+    # https://github.com/actions/setup-node
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ steps.nodenv.outputs.node-version }}
+        cache: 'npm'
+
+    # https://github.com/actions/cache
+    - uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: ${{ runner.os }}-npm-
