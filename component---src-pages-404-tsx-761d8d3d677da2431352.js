@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdev=self.webpackChunkdev||[]).push([[218],{2224:function(e,t,n){n.r(t);var u=n(7294),l=n(5592),c=n(262);t.default=function(){return u.createElement(l.Z,null,u.createElement(c.Z,{title:"404: Not found"}),u.createElement("h1",null,"404: Not Found"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-761d8d3d677da2431352.js.map
