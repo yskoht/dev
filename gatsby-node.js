@@ -34,7 +34,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
     createPage({
       path: slug,
-      component: require.resolve("./src/templates/using-dsg.tsx"),
+      component: require.resolve("./src/templates/post.tsx"),
       context: {
         slug,
       },
