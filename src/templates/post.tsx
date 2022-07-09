@@ -3,12 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import getTitleFromSlug from "../utilities/getTitleFromSlug"
 
 export default function Post({ data }) {
   const { markdownRemark } = data
   const { html, fields } = markdownRemark
   const { slug } = fields
-  const title = slug.slice(1)
+  const title = getTitleFromSlug(slug)
 
   return (
     <Layout>
