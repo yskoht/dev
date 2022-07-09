@@ -24,6 +24,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const { site, allMarkdownRemark } = data
+  const siteTitle = site.siteMetadata.title
 
   const { nodes } = allMarkdownRemark
   const listItems = nodes.map(node => {
@@ -39,8 +40,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout isTop>
-      <Seo title="Top" />
-      <h1>{site.siteMetadata.title}</h1>
+      <Seo title={siteTitle} />
+      <h1>{siteTitle}</h1>
       <ul>{listItems}</ul>
     </Layout>
   )
