@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/dev`,
   siteMetadata: {
     title: `開発`,
     description: `日誌`,
