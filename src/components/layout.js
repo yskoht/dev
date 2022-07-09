@@ -7,30 +7,20 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ isTop, children }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header isTop={isTop} siteTitle={"←"} />
       <div
         style={{
           margin: `0 auto`,
           maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
+          padding: `var(--space-1) var(--size-gutter) var(--size-gutter)`,
         }}
       >
         <main>{children}</main>
@@ -40,9 +30,15 @@ const Layout = ({ children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <Link
+            to="https://twitter.com/_yskoht"
+            style={{
+              fontSize: `var(--font-sm)`,
+              textDecoration: `none`,
+            }}
+          >
+            @_yskoht
+          </Link>
         </footer>
       </div>
     </>
@@ -50,6 +46,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
+  isTop: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 

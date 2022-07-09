@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout>
+    <Layout isTop>
       <Seo title="Top" />
       <h1>{site.siteMetadata.title}</h1>
       <ul>{listItems}</ul>
