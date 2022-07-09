@@ -14,12 +14,18 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        title
+      }
+    }
   }
 `
 
 const IndexPage = ({ data }) => {
-  const { nodes } = data.allMarkdownRemark
+  const { site, allMarkdownRemark } = data
 
+  const { nodes } = allMarkdownRemark
   const listItems = nodes.map(node => {
     const { slug } = node.fields
     const title = getTitleFromSlug(slug)
@@ -34,7 +40,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Top" />
-      <h1>開発日誌</h1>
+      <h1>{site.siteMetadata.title}</h1>
       <ul>{listItems}</ul>
     </Layout>
   )
