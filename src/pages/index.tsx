@@ -7,7 +7,7 @@ import getTitleFromSlug from "../utilities/getTitleFromSlug"
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: fields___slug, order: [DESC] }) {
       nodes {
         fields {
           slug
