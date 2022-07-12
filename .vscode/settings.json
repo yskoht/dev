@@ -3,5 +3,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
-  "cSpell.words": ["frontmatter", "yskoht"]
+  "cSpell.words": ["frontmatter", "pmdr", "yskoht"]
 }
