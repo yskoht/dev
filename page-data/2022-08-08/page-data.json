@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-post-tsx","path":"/2022-08-08","result":{"data":{"markdownRemark":{"html":"<h1>pmdr.day: refactoring</h1>\n<ul>\n<li>色の定義を MUI の Palette に移行</li>\n<li>div で書いていたものを MUI に移行</li>\n</ul>\n<hr>","fields":{"slug":"/2022-08-08"}}},"pageContext":{"slug":"/2022-08-08"}},"staticQueryHashes":["63159454"]}
