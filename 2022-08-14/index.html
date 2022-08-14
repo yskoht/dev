@@ -18,7 +18,7 @@ newtype を使っていたけど unwrap とか面倒なので、これで十分�
 <h1>misc: リファクタリングコミット率</h1>
 <p>リファクタリングばかりしていてプロジェクトが進んでない気がする。</p>
 <p>リファクタリングのコミットには <code>refactoring</code> と書いているので、
-直近 N コミットあたりのリファクタリングコミット数を数えて、リファクタリングコミット割合を出す。</p>
+直近 N コミットあたりのリファクタリングコミット数を数えて、リファクタリングコミット率を出す。</p>
 <pre><code class="language-sh">$ git log --pretty=oneline| wc -l
      412
 </code></pre>
@@ -26,6 +26,6 @@ newtype を使っていたけど unwrap とか面倒なので、これで十分�
 <pre><code class="language-sh">$ git log --pretty=oneline --reverse | ruby -ne 'BEGIN{ $a = []; $N = 10 }; $a.shift if $a.size == $N; $a.push($_); n = $a.size == $N ? $a.count{|log| log =~ /refactoring/ } : 0; puts "#{n}, #{n.to_f / $N.to_f * 100}"'
 </code></pre>
 <p><img src="https://user-images.githubusercontent.com/34795067/184541318-ad6fb2fa-186e-439c-a0df-37566795ff64.png" alt="リファクタリングコミット数"></p>
-<p><img src="https://user-images.githubusercontent.com/34795067/184541405-f2b825aa-7a0c-4d8a-82e4-ab00769abe2a.png" alt="リファクタリングコミット割合(%)"></p>
+<p><img src="https://user-images.githubusercontent.com/34795067/184541741-6b3b450d-6df3-4d02-bb76-20150e20a281.png" alt="リファクタリングコミット率(%)"></p>
 <p>なんとなく周期が見えて面白い。</p>
 <hr></div></main><footer style="margin-top:var(--space-5);font-size:var(--font-sm)"><a href="https://twitter.com/_yskoht" style="font-size:var(--font-sm);text-decoration:none">@_yskoht</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2022-08-14";window.___webpackCompilationHash="b37ae3e0428d95533669";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-57bf160bcf0d42407653.js"],"app":["/app-87a037136c45d7953632.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-761d8d3d677da2431352.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-9fb916c5a1d33cbb5016.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-b6f7dfc3475820e9d824.js"]};/*]]>*/</script><script src="/dev/polyfill-57bf160bcf0d42407653.js" nomodule=""></script><script src="/dev/app-87a037136c45d7953632.js" async=""></script><script src="/dev/framework-783a9c13c8eb0516928f.js" async=""></script><script src="/dev/webpack-runtime-44bd2c473e795fbced9f.js" async=""></script></body></html>
