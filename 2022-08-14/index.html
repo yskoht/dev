@@ -11,10 +11,12 @@
 <code>NODE_ENV</code> ごとに zod で検証してできるようにした。
 環境変数の設定が漏れていたり、production では使っていけない環境変数などが設定されていたりしたら検出できる。</p>
 <p>型を書くのが難しかった。</p>
+<hr>
 <h1>pmdr.day: newtype</h1>
 <p>環境変数の検証で zod を使っていたら、branded types があることに気づいた。
 newtype を使っていたけど unwrap とか面倒なので、これで十分なのかもしれない。</p>
 <p><a href="https://github.com/gcanti/newtype-ts">gcanti/newtype-ts: Implementation of newtypes in TypeScript</a></p>
+<hr>
 <h1>misc: リファクタリングコミット率</h1>
 <p>リファクタリングばかりしていてプロジェクトが進んでない気がする。</p>
 <p>リファクタリングのコミットには <code>refactoring</code> と書いているので、
