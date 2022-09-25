@@ -12,11 +12,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
 
     const heads = node.rawMarkdownBody.match(/#(\s+)(.+):(.+)\n\n/g)
-    createNodeField({
-      name: "heads",
-      node,
-      value: heads.map(head => head.replace(/#(?:\s+)(.+:.+)\n\n/, "$1")),
-    })
+    if (heads) {
+      createNodeField({
+        name: "heads",
+        node,
+        value: heads.map(head => head.replace(/#(?:\s+)(.+:.+)\n\n/, "$1")),
+      })
+    }
   }
 }
 
