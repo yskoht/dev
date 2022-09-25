@@ -24,6 +24,7 @@ const Layout = ({ isTop, children }) => {
         }}
       >
         <main>{children}</main>
+        <hr />
         <footer
           style={{
             marginTop: `var(--space-5)`,
