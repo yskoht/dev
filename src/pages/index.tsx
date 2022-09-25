@@ -11,6 +11,7 @@ export const query = graphql`
       nodes {
         fields {
           slug
+          heads
         }
       }
     }
@@ -28,12 +29,32 @@ const IndexPage = ({ data }) => {
 
   const { nodes } = allMarkdownRemark
   const listItems = nodes.map(node => {
-    const { slug } = node.fields
+    const { slug, heads } = node.fields
     const title = getTitleFromSlug(slug)
 
     return (
       <li key={slug}>
-        <Link to={slug}>{title}</Link>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Link to={slug}>{title}</Link>
+          <div style={{ fontSize: "9px", display: "flex", marginLeft: 8 }}>
+            {heads.slice(0, 3).map(head => (
+              <div
+                style={{
+                  border: "1px solid #ccc",
+                  borderRadius: 8,
+                  marginRight: 8,
+                  padding: "2px 8px",
+                  maxWidth: 200,
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {head}
+              </div>
+            ))}
+          </div>
+        </div>
       </li>
     )
   })

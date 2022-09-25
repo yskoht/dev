@@ -5,11 +5,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({ node, getNode, trailingSlash: false })
-
     createNodeField({
       name: "slug",
       node,
       value: slug,
+    })
+
+    const heads = node.rawMarkdownBody.match(/#(\s+)(.+):(.+)\n\n/g)
+    createNodeField({
+      name: "heads",
+      node,
+      value: heads.map(head => head.replace(/#(?:\s+)(.+:.+)\n\n/, "$1")),
     })
   }
 }
