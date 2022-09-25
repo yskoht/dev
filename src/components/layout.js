@@ -31,15 +31,30 @@ const Layout = ({ isTop, children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          <Link
-            to="https://twitter.com/_yskoht"
-            style={{
-              fontSize: `var(--font-sm)`,
-              textDecoration: `none`,
-            }}
-          >
-            @_yskoht
-          </Link>
+          <div>
+            GitHub:
+            <Link
+              to="https://github.com/yskoht"
+              style={{
+                fontSize: `var(--font-sm)`,
+                textDecoration: `none`,
+              }}
+            >
+              yskoht
+            </Link>
+          </div>
+          <div>
+            Twitter:
+            <Link
+              to="https://twitter.com/_yskoht"
+              style={{
+                fontSize: `var(--font-sm)`,
+                textDecoration: `none`,
+              }}
+            >
+              @_yskoht
+            </Link>
+          </div>
         </footer>
       </div>
     </>
