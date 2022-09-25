@@ -15,7 +15,7 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ steps.get-version.outputs.nodejs }}
-        cache: "yarn"
+        cache: "npm"
 
     # https://github.com/actions/cache
     - uses: actions/cache@v3
