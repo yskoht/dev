@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
             {title}
           </Link>
           <div style={{ fontSize: "9px", display: "flex", marginLeft: 8 }}>
-            {heads.slice(0, 3).map(head => (
+            {heads.map(head => (
               <div
                 style={{
                   border: "1px solid #ccc",
