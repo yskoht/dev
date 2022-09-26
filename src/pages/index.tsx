@@ -35,7 +35,9 @@ const IndexPage = ({ data }) => {
     return (
       <li key={slug}>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Link to={slug}>{title}</Link>
+          <Link to={slug} style={{ flexGrow: 0, flexShrink: 0 }}>
+            {title}
+          </Link>
           <div style={{ fontSize: "9px", display: "flex", marginLeft: 8 }}>
             {heads.slice(0, 3).map(head => (
               <div
