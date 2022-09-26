@@ -7,7 +7,6 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -33,27 +32,27 @@ const Layout = ({ isTop, children }) => {
         >
           <div>
             GitHub:
-            <Link
-              to="https://github.com/yskoht"
+            <a
+              href="https://github.com/yskoht"
               style={{
                 fontSize: `var(--font-sm)`,
                 textDecoration: `none`,
               }}
             >
               yskoht
-            </Link>
+            </a>
           </div>
           <div>
             Twitter:
-            <Link
-              to="https://twitter.com/_yskoht"
+            <a
+              href="https://twitter.com/_yskoht"
               style={{
                 fontSize: `var(--font-sm)`,
                 textDecoration: `none`,
               }}
             >
               @_yskoht
-            </Link>
+            </a>
           </div>
         </footer>
       </div>

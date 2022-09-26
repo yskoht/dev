@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => {
           <div style={{ fontSize: "9px", display: "flex", marginLeft: 8 }}>
             {heads.map(head => (
               <div
+                key={head}
                 style={{
                   border: "1px solid #ccc",
                   borderRadius: 8,
