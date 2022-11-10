@@ -3,6 +3,7 @@
 Webpack が <code class="language-text">Module not found</code> を出していてなんのことかわからなかったが、
 そもそも <code class="language-text">package.json</code> に package を追加し忘れていた。
 追加し忘れていてもローカルではビルドできてしまう。</p>
+<hr>
 <h1>pmdr: envsafe</h1>
 <p><a href="./2022-08-14.md">2022-08-14</a>で環境変数を zod で検証できるようにしていた。
 で、ビルドしようとしたら環境変数が足りなくてビルドできない。
@@ -23,6 +24,7 @@ Webpack が <code class="language-text">Module not found</code> を出してい�
 ローカル環境では <code class="language-text">boolean | undefined</code> みたいな検証がしたい。
 環境ごとに <code class="language-text">envsafe</code> を呼び出せば良いような気もするが、もうちょっとスッキリ書きたい。</p>
 <p>もしくは使う側で <code class="language-text">モックが有効かつローカル環境であるときに</code> と条件をつけて使うほうが良いのかもしれない。</p>
+<hr>
 <h1>pmdr: Runtime Configuration</h1>
 <ul>
 <li><a href="https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration">next.config.js: Runtime Configuration | Next.js</a></li>
