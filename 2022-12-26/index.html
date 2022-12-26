@@ -28,7 +28,7 @@
     <span class="token hvariable">f</span> <span class="token operator">>>=</span> <span class="token hvariable">k</span> <span class="token operator">=</span> <span class="token operator">\</span> <span class="token hvariable">r</span> <span class="token operator">-></span> <span class="token hvariable">k</span> <span class="token punctuation">(</span><span class="token hvariable">f</span> <span class="token hvariable">r</span><span class="token punctuation">)</span> <span class="token hvariable">r</span></code></pre></div>
 <p>本と記号が違うけど同じ。（<code class="language-text">return</code> が書かれてない。なぜ。）</p>
 <p><code class="language-text">(>>=) :: m a -> (a -> m b) -> m b</code> と見比べると、
-<code class="language-text">f</code>　が <code class="language-text">m a</code>、<code class="language-text">k</code> が <code class="language-text">m b</code>。</p>
+<code class="language-text">f</code>　が <code class="language-text">m a</code>、<code class="language-text">k</code> が <code class="language-text">a -> m b</code>。</p>
 <p><code class="language-text">return</code> は本によると <code class="language-text">return x = \_ -> x</code>。
 <code class="language-text">return :: a -> m a</code> と見比べると <code class="language-text">\_ -> x</code> が <code class="language-text">ma</code>。
 なので、関数モナドは <code class="language-text">\_ -> x</code> のような形をしていて、たぶん <code class="language-text">m a</code> を評価すると <code class="language-text">a</code> になる（？）</p>
